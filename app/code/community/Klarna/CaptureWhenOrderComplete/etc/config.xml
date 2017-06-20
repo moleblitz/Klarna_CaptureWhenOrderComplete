@@ -17,15 +17,15 @@
             </klarna_capturewhenordercomplete>
         </models>
         <events>
-            <sales_order_save_commit_after>
+            <sales_order_shipment_save_before>
                 <observers>
-                    <klarna_capturewhenordercomplete_capture>
+                    <klarna_capture_before_shipment_save>
                         <type>model</type>
                         <class>klarna_capturewhenordercomplete/observer</class>
-                        <method>salesOrderSaveCommitAfter</method>
-                    </klarna_capturewhenordercomplete_capture>
+                        <method>captureInvoices</method>
+                    </klarna_capture_before_shipment_save>
                 </observers>
-            </sales_order_save_commit_after>
+            </sales_order_shipment_save_before>
             <kco_push_notification_after>
                 <observers>
                     <klarna_capturewhenordercomplete_create_invoice>
